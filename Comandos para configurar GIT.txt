@@ -1,0 +1,63 @@
+COMANDOS PARA CONFIGURAR GIT
+git --version
+git version 2.24.3 (Apple Git-128)
+git config --global user.name "catalinatorres.m" ##comando para configurar mi nombre de usuario en git.
+git config --global user.email "laurac_torres11@hotmail.com" ##comando para configurar mi correo electrónico en git.
+git config -l 
+credential.helper=osxkeychain
+user.email=laurac_torres11@hotmail.com
+user.name=catalinatorres.m
+
+
+git init "primer repositorio" ##comando para inicializar el proyecto de git "primer repositorio".
+Initialized empty Git repository in /Users/lauracatalinatorres/primer repositorio/.git/
+cd "primer repositorio" ##comando para quedar en el directorio "primer repositorio".
+nano "1er programa" ##comando que crea y abre un archivo de texto llamado "1er programa"
+ls ##comando que lista el contenido del directorio actual, lo usé para verificar que se hubiera creado exitosamente el archivo de texto.
+1er archivo
+
+
+COMANDOS PARA CONECTAR DE GITHUB
+mkdir git-repos ##comando para crear un nuevo directorio llamado "git-repos
+cd git-repos ##cambia del directorio en el que estaba al "git-repos"
+git clone https://github.com/catalinatm2409/Repositorio1.git ## con este comando se clonó el repositorio, "Repositorio 1", que se creó directamente en github.
+Cloning into 'Repositorio1'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+ls
+Repositorio1
+cd Repositorio1
+ls #se verifica que en el directorio repositorio clonado se encuentra el archivo README.md, el cual se creó en GitHub.
+README.md
+
+
+COMANDOS PARA CREAR UNA RAMA
+git checkout -b test ##comando para crear la rama "test".
+Switched to a new branch 'test'
+git status ##comando que imprime en pantalla la rama en la que se encuentra y últimos cambios realizados en ella.
+On branch test
+nothing to commit, working tree clean
+git branch ##comando que imprime en pantalla las ramas creadas donde main es la rama principal.
+  main
+* test
+
+
+COMANDOS PARA CREAR UN ARCHIVO EN EL REPOSITORIO
+nano archivo_prueba ##crea al archivo "archivo_prueba" en el Repositorio1
+ls ##lista los archivos en el Repositorio, lo usé para verificar que se hubiera creado el txt exitosamente.
+README.md	archivo_prueba
+git add archivo_prueba ##comando que agrega el archivo_prueba al Repositorio1
+MacBook-Air-de-Laura-4:Repositorio1 lauracatalinatorres$ git status ##Usé el status para ver qué salía del archivo_prueba.
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   archivo_prueba
+
+git commit -m "Se va a subir un archivo a github" ##comando para guardar los cambios hechos en el Repositorio1 y el mensaje dice los cambios hechos.
+[main 975600d] Se va a subir un archivo a github
+ 1 file changed, 1 insertion(+)
+ create mode 100644 archivo_prueba

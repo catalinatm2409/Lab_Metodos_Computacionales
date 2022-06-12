@@ -1,0 +1,131 @@
+#Realizar el siguiente tutorial, se recomienda que mientras va haciendo el tutorial abra 
+#su editor de textos y vaya copiando los comandos para tenerlos guardados.
+##############
+# 1. Directorios de Linux:
+pwd
+ls
+ls .
+ls ..
+ls -l
+ls -lrt
+ls /
+##############
+# 2. Asignación de variables:
+a=1
+b=2
+c='Hoy es lunes'
+echo $a
+echo $b
+echo $c
+##############
+# 3. Operaciones con variables:
+echo $(($a+$b))
+## ¿qué pasa si?
+echo $($a+$b)
+##
+echo $(($a+1))
+##############
+# 4. Visualizar un archivo. Usando cd vaya a la carpeta Actividad_1,
+# abra el archivo con las siguientes herramientas: less, more, tail, cat, desde la terminal así:
+less nombre_archivo
+# 5. programa "Hola mundo":
+#Abra un editor de texto como vim o nano desde la terminal. Para nano:
+nano primer_programa.sh
+#desde allí escriba:
+#!/bin/bash
+# declare STRING variable
+msj="Hello World"
+#print variable on a screen
+echo $msj
+######
+#luego dele permisos de ejecución:
+chmod +x primer_programa.sh
+#luego ejecútelo:
+./primer_programa.sh
+#6. expresiones recurrentes:
+##6.1 for:
+for i in {1..5}
+do
+echo $i
+done
+##6.2 if:
+num=1
+if [ "$num" -gt "150" ]
+then
+echo $num
+else
+echo $(($num+50))
+fi
+
+
+Solución
+#1.
+pwd ##Este comando imprime en pantalla el directorio actual.
+/home/jovyan
+ls ##Este comando lista los archivos del directorio actual.
+README.md  requirements.txt
+ls . ##Este comando lista los archivos del directorio actual (se obtuvo lo mismo que con el comando ls).
+README.md  requirements.txt
+ls ..
+jovyan
+ls -l ##Este comando lista los archivos del directorio actual en formato largo.
+total 8
+-rw-r--r-- 1 jovyan jovyan 755 Feb  2 17:42 README.md
+-rw-r--r-- 1 jovyan jovyan 106 Feb  2 17:42 requirements.txt
+ls -lrt
+total 8
+-rw-r--r-- 1 jovyan jovyan 106 Feb  2 17:42 requirements.txt
+-rw-r--r-- 1 jovyan jovyan 755 Feb  2 17:42 README.md
+ls /
+bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
+boot  etc  lib   media  opt  root  sbin  sys  usr
+
+#2.
+a=1
+b=2
+c='Hoy es lunes' ##En las ultimas 3 líneas se definieron variables, 2 de tipo numérico y una de tipo STRING.
+echo $a ##Este comando imprime en pantalla la variable a.
+1
+echo $b ##Este comando imprime en pantalla la variable b.
+2
+echo $c ##Este comando imprime en pantalla la variable c.
+Hoy es lunes
+
+#3.
+echo $(($a+$b)) ##Este comando imprime en pantalla la suma de las variables a y b.
+3
+echo $($a+$b) ##En esta línea hay un error de sintaxis.
+bash: 1+2: command not found
+
+echo $(($a+1)) ##Este comando imprime en pantalla la suma de la variable a y 1.
+2
+
+#5.
+#!/bin/bash
+msj="Hello World" ##Se define la variable msj con el STRING "Hello World".
+echo $msj ##Este comando imprime en pantalla la variable msj.
+Hello World
+
+No se pudo crear el archivo, pero luego de cambiar los permisos para que el programa sea ejecutable con el comando chmod +x nombre_del_programa.sh, se usa el comando ./nombre_del_programa.sh 
+
+#6.1.
+for i in {1..5} ##Se escribe el encabezado de un ciclo que recorre los números del 1 al 5.
+> do
+> echo $i ##Instrucción que se ejecuta dentro del ciclo. 
+> done ##Fin del ciclo
+1
+2
+3
+4
+5
+
+#6.2.
+num=1 ##Se establece una variable numérica.
+if [ "$num " -gt "150" ] ##Condición del if, se tiene como condición que la variable num sea mayor que el número 50.
+> then
+> echo $num ##Si se cumple la condición se imprime en pantalla la variable num.
+> else
+> echo $(($num+50)) ##Instrucción que se lleva a cabo en caso de que num no cumpla la condición que se establece en el encabezado del if.
+> fi ##Fin del condicional.
+51
+
